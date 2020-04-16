@@ -4,8 +4,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getAllDashAtributtes } from '../components/actionCreators';
 import Iframe from 'react-iframe';
-import MenuLateral from './menu/menu-side'
-import menuHeader from './menu/menu-header'
+import MenuLateral from './menu/menu-side';
+import MenuHeader from './menu/menu-header';
+import { toogleMenuScript } from './../scripts';
+
 class HomeDash extends Component {
     constructor(props) {
         super(props);
@@ -16,6 +18,7 @@ class HomeDash extends Component {
     }
 
     componentDidMount() {
+        toogleMenuScript();
         this.props.getAllDashAtributtes();
     }
 
@@ -51,7 +54,7 @@ class HomeDash extends Component {
     render() {
         return (
             <div className="home" >
-                <menuHeader {...this.props} exibirMenuLateral={true}/>
+                <MenuHeader {...this.props} exibirMenuLateral={true}/>
                 <MenuLateral {...this.props} renderComponent={this.renderComponent.bind(this)}/>
             </div>
             )

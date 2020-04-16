@@ -1,5 +1,9 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
+import { toogleMenuScript } from './../scripts';
+import MenuLateral from './menu/menu-side';
+import MenuHeader from './menu/menu-header';
+
 class Register extends Component {
 
   constructor(props) {
@@ -8,6 +12,59 @@ class Register extends Component {
       selectOption: "1"
     };
   }
+
+  componentDidMount() {
+    toogleMenuScript();
+  }
+
+  renderComponent(){
+    return (
+      <div className="card mt-3">
+        <div className="row m-3">
+          <div id="collapseFiltro" className="card-body collapse show">
+      <form onSubmit={
+        this.handleSubmit.bind(this)
+      }>
+        <div>
+          <div className="row">
+          <div className="col-4">
+          <label className="text-primary" htmlFor="">Adicionar Dash</label>
+          <input placeholder="Título" className="form-control form-control"
+            ref={input => this.title = input} />
+          <input placeholder="Descrição" className="form-control form-control"
+            ref={input => this.description = input} />
+          <input placeholder="URL" className="form-control form-control"
+            ref={input => this.url = input} />
+            <hr/>
+          <form >
+          <div class="custom-control custom-radio">
+            <label >
+              <input type="radio"
+                name="rbtn_public"
+                value="1"
+                checked={this.state.selectOption === "1"}
+                onChange = {this.handleOptionChange} /><i className="fas fa-book"></i> Público</label>
+              </div>
+              <div class="custom-control custom-radio">
+            <label >
+              <input type="radio" 
+                name="rbtn_private"
+                value="2"
+                checked={this.state.selectOption === "2"}
+                onChange = {this.handleOptionChange} /><i className="fas fa-lock"> </i> Privado</label>
+                 </div>
+          </form>
+            </div>
+          </div>
+          <hr/>
+          <button type="submit" className="btn btn-sm btn-success float-right"><i className="mr-2 fas fa-plus"></i>Adicionar</button>
+        </div>
+      </form>
+      </div>
+      </div>
+    </div>
+    )
+}
 
   async handleSubmit() {
     var dashAtributtes = {
@@ -29,36 +86,10 @@ class Register extends Component {
   };
   render() {
     return (
-      <form onSubmit={
-        this.handleSubmit.bind(this)
-      }>
-        <div>
-          <label>Adicionar Dash</label>
-          <input placeholder="Título"
-            ref={input => this.title = input} />
-          <input placeholder="Descrição"
-            ref={input => this.description = input} />
-          <input placeholder="URL"
-            ref={input => this.url = input} />
-          <form>
-            <label >
-              <input type="radio"
-                name="rbtn_public"
-                value="1"
-                checked={this.state.selectOption === "1"}
-                onChange = {this.handleOptionChange} />
-              Público</label>
-            <label >
-              <input type="radio"
-                name="rbtn_private"
-                value="2"
-                checked={this.state.selectOption === "2"}
-                onChange = {this.handleOptionChange} />
-              Privado</label>
-          </form>
-          <button type="submit">Adicionar</button>
-        </div>
-      </form>
+      <div className="home" >
+                <MenuHeader {...this.props} exibirMenuLateral={true}/>
+                <MenuLateral {...this.props} renderComponent={this.renderComponent.bind(this)}/>
+            </div>
     )
   }
 }

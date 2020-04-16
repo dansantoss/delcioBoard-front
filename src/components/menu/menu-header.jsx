@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 
 export default class menuHeader extends Component {
 
@@ -13,11 +11,7 @@ export default class menuHeader extends Component {
     return (
       <div>
         <nav className="navbar fixed-top navbar-dark bg-primary">
-
-          {/* <Link className="navbar-brand" to="/home">
-<img src={require("../../imagens/portal-do-saber_light.svg")} alt="clinicas" className="d-block mx-auto" width="180" />
-</Link> */}
-
+                  
           {this.props.exibirMenuLateral &&
             <ul id="menu-toggle" className="navbar-nav">
               <button id="sidebarCollapse" className="hamburguer">
@@ -27,10 +21,8 @@ export default class menuHeader extends Component {
               </button>
             </ul>
           }
+          <h2 className="text-white">Délcio Board</h2>
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/logout"><i className="fas fa-sign-out-alt"></i> Sair</Link>
-            </li>
           </ul>
         </nav>
 
