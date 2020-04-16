@@ -1,0 +1,1 @@
+export const GETDASH = 'get_dash'

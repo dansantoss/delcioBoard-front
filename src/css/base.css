@@ -1,0 +1,155 @@
+@import url(http://allfont.net/allfont.css?fonts=ubuntu);
+.bg-body-login {
+    background-color: #eee;
+}
+
+.bg-body {
+    background-color: #f1f1f1;
+}
+
+.form-pesquisa label,
+.form-pesquisa input {
+    margin-right: 10px;
+}
+
+table td,
+.rt-table {
+    font-size: 0.8rem;
+}
+
+table thead th,
+.rt-thead .-header {
+    font-size: 0.85rem;
+}
+
+@media(max-width: 992px) {
+    .card {
+        margin: 10px 0;
+    }
+}
+
+.form-pesquisa label {
+    font-size: 0.9rem;
+}
+
+.page-item .form-control {
+    margin-left: 1rem;
+}
+
+.total-registros {
+    margin-right: 1.5rem;
+}
+
+@media(max-width: 768px) {
+    .total-registros {
+        width: 100%
+    }
+    .resultados-pagina {
+        width: 60px;
+    }
+}
+
+.icon-margin {
+    margin-right: 7px;
+}
+
+.btn-acoes-aprovacao {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+}
+
+.erro-titulo {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3em;
+    font-weight: bolder;
+    color: #0083ca !important
+}
+
+.erro-mensagem {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5em;
+    color: dimgray;
+}
+
+.color-bar-fixed {
+    position: fixed;
+    top: 62px;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.loader {
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.281);
+    display: flex;
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    z-index: 99999;
+    top: 0;
+    overflow: hidden;
+}
+
+.loading {
+    margin: auto auto;
+}
+
+.vertical-align {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.modal-lg {
+    width: auto;
+    min-width: 55%;
+}
+
+.td-icon {
+    width: 25px;
+    display: inline-block;
+}
+
+.pie-chart {
+    margin: auto;
+}
+
+.recharts-cartesian-axis {
+    font-size: 0.9rem;
+}
+
+.row {
+    margin-bottom: 1rem;
+}
+
+.table-custom-header {
+    vertical-align: middle;
+    text-align: left;
+}
+
+.ReactTable .rt-thead .rt-th,
+.ReactTable .rt-thead .rt-td {
+    padding: 15px 10px !important;
+    font-size: 0.85rem;
+}
+
+.ReactTable .rt-tbody .rt-td {
+    border-right: none;
+    padding: 15px 10px !important;
+    font-size: 0.85rem;
+}
+
+.ReactTable {
+    border: none;
+}
+
+.class_disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    background: #CCC;
+}
+
+.modal-list {
+    margin-left: 20px;
+}
