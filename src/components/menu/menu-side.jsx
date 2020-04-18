@@ -18,7 +18,6 @@ export default class MenuLateral extends Component {
           <nav id="sidebar-wrapper" className="active">
             <ul className="sidebar-nav">
               {
-
                 config.menus.map(menu => (
                   ((menu.link === '/' && menuHome) || (menu.link === '/register' && menuRegister)) &&
 

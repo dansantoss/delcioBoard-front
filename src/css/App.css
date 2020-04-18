@@ -153,3 +153,13 @@ table thead th,
 .modal-list {
     margin-left: 20px;
 }
+
+.App {
+    font-family: sans-serif;
+    align-items: center;
+  }
+  
+  .md-form .prefix{
+    left: 0;
+    top: 12px;
+}

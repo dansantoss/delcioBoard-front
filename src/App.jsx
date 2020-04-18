@@ -8,7 +8,6 @@ import Register from './components/Register'
 import dashReducer from './components/reducer'
 import './css/bootstrap.css'
 import './css/App.css'
-import './css/base.css'
 
 const reducers = combineReducers({ dashReducer })
 const store = applyMiddleware(thunk)(createStore)(reducers);
@@ -27,7 +26,7 @@ class App extends Component {
             <Route
               path="/register" component={Register}
             />
-
+  
             <Redirect
               path="*" to="/"
             />

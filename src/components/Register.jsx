@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toogleMenuScript } from './../scripts';
 import MenuLateral from './menu/menu-side';
 import MenuHeader from './menu/menu-header';
+import { MDBInput } from "mdbreact";
 
 class Register extends Component {
 
@@ -18,7 +19,7 @@ class Register extends Component {
   }
 
   renderComponent(){
-    return (
+    return (   
       <div className="card mt-3">
         <div className="row m-3">
           <div id="collapseFiltro" className="card-body collapse show">
@@ -28,14 +29,13 @@ class Register extends Component {
         <div>
           <div className="row">
           <div className="col-4">
-          <label className="text-primary" htmlFor="">Adicionar Dash</label>
-          <input placeholder="Título" className="form-control form-control"
+          <label className="text-primary" htmlFor=""><i className="fas fa-chart-line"></i> Adicionar Dash</label>
+          <MDBInput label="Título" 
             ref={input => this.title = input} />
-          <input placeholder="Descrição" className="form-control form-control"
-            ref={input => this.description = input} />
-          <input placeholder="URL" className="form-control form-control"
+            <MDBInput label="URL" 
             ref={input => this.url = input} />
-            <hr/>
+          <MDBInput label="Descrição" type="textarea"
+            ref={input => this.description = input} />          
           <form >
           <div class="custom-control custom-radio">
             <label >

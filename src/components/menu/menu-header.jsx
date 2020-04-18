@@ -22,7 +22,7 @@ export default class menuHeader extends Component {
             </ul>
           }
           <h2 className="text-white">Délcio Board</h2>
-          <ul className="navbar-nav ml-auto">
+          <ul  className="navbar-nav ml-auto">
           </ul>
         </nav>
 
