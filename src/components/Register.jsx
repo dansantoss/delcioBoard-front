@@ -19,22 +19,22 @@ class Register extends Component {
   }
 
   renderComponent(){
-    return (   
+    return (
+      <div className="shadow-box-example z-depth-1">  
       <div className="card mt-3">
         <div className="row m-3">
           <div id="collapseFiltro" className="card-body collapse show">
       <form onSubmit={
         this.handleSubmit.bind(this)
       }>
-        <div>
-          <div className="row">
-          <div className="col-4">
+        <div>          
+          <div>
           <label className="text-primary" htmlFor=""><i className="fas fa-chart-line"></i> Adicionar Dash</label>
           <MDBInput label="Título" 
             ref={input => this.title = input} />
             <MDBInput label="URL" 
             ref={input => this.url = input} />
-          <MDBInput label="Descrição" type="textarea"
+          <MDBInput label="Descrição" type="textarea"  
             ref={input => this.description = input} />          
           <form >
           <div class="custom-control custom-radio">
@@ -54,14 +54,14 @@ class Register extends Component {
                 onChange = {this.handleOptionChange} /><i className="fas fa-lock"> </i> Privado</label>
                  </div>
           </form>
-            </div>
-          </div>
+            </div>          
           <hr/>
           <button type="submit" className="btn btn-sm btn-success float-right"><i className="mr-2 fas fa-plus"></i>Adicionar</button>
         </div>
       </form>
       </div>
       </div>
+    </div>
     </div>
     )
 }

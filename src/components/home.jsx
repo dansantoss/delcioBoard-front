@@ -40,12 +40,13 @@ class HomeDash extends Component {
                                     <MDBInput
                                     label="Pesquisar Dash"
                                     outline size="lg"
-                                    outline icon="search"
+                                    icon="search"
                                     onChange={this.onchange}
                                     />
                                 </div>
                                 <div className="col" />
                             </div>
+                            
                                 {this.props.store.dashReducer.dados.length <= 0 && 
                                     (
                                     <div className="container card mt-3">
@@ -57,12 +58,14 @@ class HomeDash extends Component {
                                 }
                                 {this.props.store.dashReducer.dados.length > 0 && 
                                 (
-                                <div className="row">                                                                   
+                            <div className="d-flex justify-content-center">
+                                <div>                                                                                                  
                                      {filteredCountries.map(row => {
                                         return this.RenderData(row);
                                     })}
-                                    </div>                                                                  
-                                )}           
+                                </div>                                
+                            </div>                                                                  
+                                )}                             
                         </div>
                     </main>
             </div>
@@ -70,9 +73,9 @@ class HomeDash extends Component {
     }
 
     RenderData = row => {
-            return (
+            return (               
                 <MDBCol>
-                <MDBCard style={{ width: "37.5em", marginTop: "20px" }}>
+                <MDBCard className="shadow-box-example z-depth-1" style={{ width: "37.5em", marginTop: "20px" }}>
                     <p><Iframe url={row.url}
                         width="600"
                         height="320"
@@ -85,7 +88,7 @@ class HomeDash extends Component {
                     <MDBCardText>{row.description}</MDBCardText>
                    </MDBCardBody>
                 </MDBCard>
-                </MDBCol>
+                </MDBCol>            
             )
     }
 
