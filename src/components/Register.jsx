@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toogleMenuScript } from './../scripts';
 import MenuLateral from './menu/menu-side';
 import MenuHeader from './menu/menu-header';
-import { MDBInput } from "mdbreact";
+
 
 class Register extends Component {
 
@@ -24,19 +24,22 @@ class Register extends Component {
       <div className="card mt-3">
         <div className="row m-3">
           <div id="collapseFiltro" className="card-body collapse show">
-      <form onSubmit={
+      <form onSubmit={        
         this.handleSubmit.bind(this)
       }>
         <div>          
-          <div>
+          <div className="form-group">
           <label className="text-primary" htmlFor=""><i className="fas fa-chart-line"></i> Adicionar Dash</label>
-          <MDBInput label="Título" 
-            ref={input => this.title = input} />
-            <MDBInput label="URL" 
-            ref={input => this.url = input} />
-          <MDBInput label="Descrição" type="textarea"  
-            ref={input => this.description = input} />          
-          <form >
+          <input placeholder="Título" className="form-control"
+            ref={(input) => this.title = input} />
+            <hr/>
+            <input placeholder="URL" className="form-control" 
+            ref={(input) => this.url = input} />
+            <hr/>
+          <textarea placeholder="Descrição"  className="form-control"
+            ref={(input) => this.description = input} />
+            <hr/>          
+          <div >
           <div class="custom-control custom-radio">
             <label >
               <input type="radio"
@@ -53,7 +56,7 @@ class Register extends Component {
                 checked={this.state.selectOption === "2"}
                 onChange = {this.handleOptionChange} /><i className="fas fa-lock"> </i> Privado</label>
                  </div>
-          </form>
+          </div>
             </div>          
           <hr/>
           <button type="submit" className="btn btn-sm btn-success float-right"><i className="mr-2 fas fa-plus"></i>Adicionar</button>
@@ -66,17 +69,20 @@ class Register extends Component {
     )
 }
 
-  async handleSubmit() {
+    async handleSubmit() {
     var dashAtributtes = {
       title: this.title.value,
       description: this.description.value,
       url: this.url.value,
       status: this.state.selectOption
     }
-    const headers = {
-      'Content-Type': 'application/json;charset=UTF-8'
+     const headers = {
+     'Content-Type': 'application/json;charset=UTF-8'
     }
     await axios.post(`http://localhost:3001/v1/api/create`, dashAtributtes, headers)
+    .then(
+      alert("Dash cadastrado com sucesso!")
+    )
   }
 
   handleOptionChange = changeEvent => {
@@ -84,6 +90,7 @@ class Register extends Component {
       selectOption: changeEvent.target.value
     });
   };
+
   render() {
     return (
       <div className="home" >
